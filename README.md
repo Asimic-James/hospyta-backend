@@ -22,15 +22,85 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+# NestJS User Management and Post System
+
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This project is a NestJS application that provides user management, post creation, and interaction features. It includes user authentication using JWT, post creation, commenting, and upvoting/downvoting posts. The application uses MongoDB for data storage and Swagger for API documentation.
+
+
+This README provides a comprehensive overview of your project, including setup instructions, API documentation, and security considerations.
+
+
+## Features
+
+- User registration and authentication
+- JWT-based authentication
+- Post creation, editing, and deletion
+- Commenting on posts
+- Upvoting and downvoting posts
+- Filtering and sorting posts by category and upvotes
+- Swagger API documentation
+
+## Prerequisites
+
+- Node.js (v14 or higher)
+- MongoDB database
 
 ## Installation
 
-```bash
-$ npm install
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Asimic-James/hospyta-backend
+   cd hospyta-backend
+2.
 ```
+npm install
+
+3. MONGO_URI=mongodb_uri
+JWT_SECRET=jwt_secret
+```
+
+## Folder Structure
+
+```bash
+src/
+│
+├── auth/
+│   ├── auth.module.ts
+│   ├── auth.service.ts
+│   ├── jwt.strategy.ts
+│   ├── local.strategy.ts
+│   └── login.dto.ts
+│
+├── users/
+│   ├── users.module.ts
+│   ├── users.service.ts
+│   ├── users.controller.ts
+│   ├── user.schema.ts
+│   └── create-user.dto.ts
+│
+├── posts/
+│   ├── posts.module.ts
+│   ├── posts.service.ts
+│   ├── posts.controller.ts
+│   ├── post.schema.ts
+│   └── create-post.dto.ts
+│
+├── comments/
+│   ├── comments.module.ts
+│   ├── comments.service.ts
+│   ├── comments.controller.ts
+│   ├── comment.schema.ts
+│   └── create-comment.dto.ts
+│
+├── app.controller.ts
+├── app.module.ts
+└── main.ts
+```
+
+
 
 ## Running the app
 
@@ -45,6 +115,11 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## API Documentation
+
+- The Swagger API documentation is available at http://localhost:3000/api-docs.
+
+
 ## Test
 
 ```bash
@@ -58,15 +133,12 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
 ## License
 
